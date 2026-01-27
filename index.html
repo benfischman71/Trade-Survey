@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trade Coffee AI Usage Survey</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Deadline Banner -->
+    <div class="deadline-banner" id="deadlineBanner">
+        <div class="container">
+            <span class="deadline-icon">⏰</span>
+            <span class="deadline-text">Survey closes in: <strong id="countdown">Loading...</strong></span>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="survey-container">
+        <!-- Header -->
+        <div class="survey-header">
+            <h1>Trade Coffee AI Usage Survey</h1>
+            <p class="survey-subtitle">Help us understand how you're using AI so we can support you better</p>
+            
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+                <span class="progress-text" id="progressText">Section 1 of 7</span>
+            </div>
+        </div>
+
+        <!-- Survey Form -->
+        <form id="surveyForm">
+            
+            <!-- SECTION 1: Current AI Usage -->
+            <div class="form-section active" data-section="1">
+                <h2 class="section-title">Section 1: Current AI Usage</h2>
+                <p class="section-description">Let's understand where you are today</p>
+                
+                <div class="question-group">
+                    <label class="question-label required">
+                        How are you currently using AI tools in your daily work at Trade?
+                    </label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q1_usage_level" value="core_daily" required>
+                            <span>I use AI as a core part of my daily workflow (multiple times per day)</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q1_usage_level" value="regular_tasks">
+                            <span>I use AI regularly for specific tasks (few times per week)</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q1_usage_level" value="occasional">
+                            <span>I occasionally experiment with AI but it's not part of my routine</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q1_usage_level" value="tried_stopped">
+                            <span>I tried AI once or twice but didn't stick with it</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q1_usage_level" value="not_yet">
+                            <span>I haven't used AI tools for work yet</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q1_usage_level" value="dont_know">
+                            <span>I don't know how to start</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <label class="question-label required">
+                        Which AI tools have you used for Trade work in the last 30 days? (Select all that apply)
+                    </label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q2_tools" value="chatgpt_free">
+                            <span>ChatGPT Free</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q2_tools" value="chatgpt_paid">
+                            <span>ChatGPT Plus/Pro ($20-200/month paid version)</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q2_tools" value="claude_free">
+                            <span>Claude Free</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q2_tools" value="claude_pro">
+                            <span>Claude Pro ($20/month paid version)</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q2_tools" value="gemini_free">
+                            <span>Google Gemini/Bard Free</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q2_tools" value="gemini_paid">
+                            <span>Google Gemini Advanced/Pro (paid version)</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q2_tools" value="perplexity">
+                            <span>Perplexity</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q2_tools" value="github_copilot">
+                            <span>GitHub Copilot (for coding)</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q2_tools" value="grammarly">
+                            <span>Grammarly AI features</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q2_tools" value="marketing_ai">
+                            <span>Jasper/Copy.ai (marketing AI tools)</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q2_tools" value="none">
+                            <span>None - I'm not using AI tools</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q2_tools" value="other">
+                            <span>Other:</span>
+                            <input type="text" class="inline-text" name="q2_tools_other" placeholder="Please specify">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <label class="question-label required">
+                        In an average week, how often do you use AI tools for Trade work?
+                    </label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q3_frequency" value="multiple_daily" required>
+                            <span>Multiple times per day (10+ times/week)</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q3_frequency" value="daily">
+                            <span>Daily (5-9 times/week)</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q3_frequency" value="few_times">
+                            <span>A few times per week (2-4 times/week)</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q3_frequency" value="once_week">
+                            <span>Once a week</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q3_frequency" value="less_than_once">
+                            <span>Less than once a week</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q3_frequency" value="dont_use">
+                            <span>I don't use AI tools</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 2: How You're Actually Using It -->
+            <div class="form-section" data-section="2">
+                <h2 class="section-title">Section 2: How You're Actually Using It</h2>
+                <p class="section-description">This helps us understand if AI is truly integrated into your workflow</p>
+                
+                <div class="question-group">
+                    <label class="question-label required">
+                        How much time do you estimate AI tools save you per week?
+                    </label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q4_time_saved" value="10plus" required>
+                            <span>10+ hours per week</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q4_time_saved" value="5to9">
+                            <span>5-9 hours per week</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q4_time_saved" value="2to4">
+                            <span>2-4 hours per week</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q4_time_saved" value="1hour">
+                            <span>1 hour per week</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q4_time_saved" value="less_than_1">
+                            <span>Less than 1 hour per week</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q4_time_saved" value="zero">
+                            <span>0 hours - I'm not using AI or haven't seen time savings</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q4_time_saved" value="costs_time">
+                            <span>Actually costs me time - it's slower than my normal process</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <label class="question-label required">
+                        Which statement BEST describes how you use AI? (Select ONE)
+                    </label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q5_integration" value="end_to_end" required>
+                            <span><strong>End-to-end replacement:</strong> AI has completely replaced certain tasks I used to do manually</span>
+                            <span class="option-example">Example: I no longer manually write first drafts—AI writes them, I edit</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q5_integration" value="integrated">
+                            <span><strong>Integrated into workflow:</strong> AI is a regular tool I use for specific steps in my process</span>
+                            <span class="option-example">Example: I use AI to analyze data in sheets, then I interpret findings</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q5_integration" value="occasional">
+                            <span><strong>Occasional assistant:</strong> I use AI when I'm stuck or need ideas, but it's not routine</span>
+                            <span class="option-example">Example: I ask AI for brainstorming help when I hit writer's block</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q5_integration" value="experimenting">
+                            <span><strong>Experimenting:</strong> I'm trying AI for different things but haven't found my groove yet</span>
+                            <span class="option-example">Example: I've tried it for tasks but haven't made it routine</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q5_integration" value="not_using">
+                            <span><strong>Not using:</strong> I'm not currently using AI for work</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <label class="question-label required">
+                        For which specific Trade tasks are you using AI? (Select all that apply)
+                    </label>
+                    <p class="helper-text">Select every task where you've used AI, even if only once</p>
+                    
+                    <div class="checkbox-group-categorized">
+                        <div class="category-group">
+                            <h4 class="category-title">Customer Service</h4>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6_tasks" value="cs_email_responses">
+                                <span>Drafting customer email responses</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6_tasks" value="cs_research">
+                                <span>Researching customer issues/order history</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6_tasks" value="cs_templates">
+                                <span>Creating canned responses or templates</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6_tasks" value="cs_recommendations">
+                                <span>Explaining coffee recommendations</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6_tasks" value="cs_complaints">
+                                <span>Handling complaints or difficult situations</span>
+                            </label>
+                        </div>
+
+                        <div class="category-group">
+                            <h4 class="category-title">Creative & Content</h4>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6_tasks" value="creative_roaster_stories">
+                                <span>Writing roaster stories/profiles</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6_tasks" value="creative_product_descriptions">
+                                <span>Creating product descriptions for coffees</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6_tasks" value="creative_email_copy">
+                                <span>Drafting email campaign copy</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6_tasks" value="creative_social">
+                                <span>Writing social media captions</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6_tasks" value="creative_blog">
+                                <span>Blog posts or educational content</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6_tasks" value="creative_headlines">
+                                <span>Headlines, subject lines, ad copy</span>
+                            </label>
+                        </div>
+
+                        <div class="category-group">
+                            <h4 class="category-title">Marketing</h4>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6_tasks" value="marketing_strategy">
+                                <span>Campaign strategy and planning</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6_tasks" value="marketing_analysis">
+                                <span>Analyzing campaign performance data</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6_tasks" value="marketing_research">
+                                <span>Competitive research</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6_tasks" value="marketing_seo">
+                                <span>SEO content creation</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6_tasks" value="marketing_outreach">
+                                <span>Partner/roaster outreach emails</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6_tasks" value="marketing_reports">
+                                <span>Creating reports or presentations</span>
+                            </label>
+                        </div>
+
+                        <div class="category-group">
+                            <h4 class="category-title">Merchandising</h4>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6_tasks" value="merch_tasting_notes">
+                                <span>Coffee tasting note descriptions</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6_tasks" value="merch_roaster_research">
+                                <span>Roaster research and evaluation</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6_tasks" value="merch_data_analysis">
+                                <span>Analyzing customer preference data</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6_tasks" value="merch_curation">
+                                <span>Seasonal curation planning</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6_tasks" value="merch_inventory">
+                                <span>Inventory planning or forecasting</span>
+                            </label>
+                        </div>
+
+                        <div class="category-group">
+                            <h4 class="category-title">Engineering</h4>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6_tasks" value="eng_writing_code">
+                                <span>Writing code</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6_tasks" value="eng_debugging">
+                                <span>Debugging code</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6_tasks" value="eng_docs">
+                                <span>Writing documentation</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6_tasks" value="eng_reviews">
+                                <span>Code reviews</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6_tasks" value="eng_explaining">
+                                <span>Explaining technical concepts</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6_tasks" value="eng_queries">
+                                <span>Database queries or data analysis</span>
+                            </label>
+                        </div>
+
+                        <div class="category-group">
+                            <h4 class="category-title">Finance & Operations</h4>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6_tasks" value="finance_analysis">
+                                <span>Financial analysis or modeling</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6_tasks" value="finance_reports">
+                                <span>Creating reports or dashboards</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6_tasks" value="finance_spreadsheets">
+                                <span>Analyzing data in spreadsheets</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6_tasks" value="finance_writing">
+                                <span>Writing emails or documents</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6_tasks" value="finance_contracts">
+                                <span>Contract review</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6_tasks" value="finance_process_docs">
+                                <span>Process documentation</span>
+                            </label>
+                        </div>
+
+                        <div class="category-group">
+                            <h4 class="category-title">General/Cross-functional</h4>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6_tasks" value="general_meeting_notes">
+                                <span>Meeting notes/summaries</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6_tasks" value="general_internal_email">
+                                <span>Writing emails (internal)</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6_tasks" value="general_external_email">
+                                <span>Writing emails (external)</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6_tasks" value="general_research">
+                                <span>Research and information gathering</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6_tasks" value="general_presentations">
+                                <span>Creating presentations</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6_tasks" value="general_brainstorming">
+                                <span>Brainstorming ideas</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6_tasks" value="general_editing">
+                                <span>Editing or improving writing</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6_tasks" value="general_summarizing">
+                                <span>Summarizing long documents</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6_tasks" value="none_yet">
+                                <span>None of these - I'm not using AI yet</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q6_tasks" value="other">
+                                <span>Other:</span>
+                                <input type="text" class="inline-text" name="q6_tasks_other" placeholder="Please specify">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 3: Workflow Replacement -->
+            <div class="form-section" data-section="3">
+                <h2 class="section-title">Section 3: Workflow Replacement</h2>
+                <p class="section-description">These questions help us understand TRUE integration</p>
+                
+                <div class="question-group">
+                    <label class="question-label required">
+                        What specific tasks have you STOPPED doing manually because AI now does them?
+                    </label>
+                    <p class="helper-text">Examples:<br>
+                    • "I stopped writing first drafts from scratch - Claude writes 80% of my roaster stories now"<br>
+                    • "I don't manually pull customer data anymore - I ask Gemini to query our sheets"<br>
+                    • "Nothing yet - I haven't replaced any workflows"</p>
+                    <textarea name="q7_stopped_doing" rows="4" required placeholder="Your answer (3-4 sentences)"></textarea>
+                </div>
+
+                <div class="question-group">
+                    <label class="question-label required">
+                        Describe your SINGLE BIGGEST AI workflow win at Trade.
+                    </label>
+                    <p class="helper-text">Walk us through a specific example:<br>
+                    • What was the task?<br>
+                    • How did you use AI?<br>
+                    • What changed as a result?<br>
+                    • How much time did it save?<br><br>
+                    If you haven't had a win yet, write: "Haven't had a major win yet"</p>
+                    <textarea name="q8_biggest_win" rows="5" required placeholder="Your answer (4-5 sentences)"></textarea>
+                </div>
+
+                <div class="question-group">
+                    <label class="question-label required">
+                        What tasks in your role take the MOST time each week that you wish could be faster?
+                    </label>
+                    <p class="helper-text">Be specific. Instead of "emails" say:<br>
+                    • "Writing personalized responses to 50+ customer emails about subscription changes"<br>
+                    • "Creating product descriptions for 10-15 new coffees each week"<br>
+                    • "Pulling data from 5 different sheets to create weekly performance reports"</p>
+                    <textarea name="q9_time_consuming" rows="4" required placeholder="Your answer (3-4 sentences)"></textarea>
+                </div>
+
+                <div class="question-group">
+                    <label class="question-label required">
+                        For the time-consuming tasks you listed above, have you tried using AI to help?
+                    </label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q10_tried_ai" value="yes_success" required>
+                            <span>Yes, and AI successfully replaced/accelerated this task</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q10_tried_ai" value="yes_failed">
+                            <span>Yes, I tried AI but it didn't work well for this task</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q10_tried_ai" value="no_could_help">
+                            <span>No, but I think AI could help if I knew how</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q10_tried_ai" value="no_cant_help">
+                            <span>No, I don't think AI can help with this task</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q10_tried_ai" value="no_havent_thought">
+                            <span>No, I haven't thought about using AI for this</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-group conditional" id="q10b_container" style="display: none;">
+                    <label class="question-label">
+                        If you tried AI and it DIDN'T work, what went wrong? (Optional)
+                    </label>
+                    <textarea name="q10b_what_went_wrong" rows="3" placeholder="Help us understand what to fix"></textarea>
+                </div>
+            </div>
+
+            <!-- SECTION 4: Barriers & Mindset -->
+            <div class="form-section" data-section="4">
+                <h2 class="section-title">Section 4: Barriers & Mindset</h2>
+                
+                <div class="question-group">
+                    <label class="question-label required">
+                        What's preventing you from using AI MORE in your daily work? (Select all that apply)
+                    </label>
+                    <div class="checkbox-group-categorized">
+                        <div class="category-group">
+                            <h4 class="category-title">Knowledge/Skills</h4>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q11_barriers" value="dont_know_which_tool">
+                                <span>Don't know which AI tool is best for my role</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q11_barriers" value="dont_know_prompts">
+                                <span>Don't know how to write effective prompts</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q11_barriers" value="no_examples">
+                                <span>Haven't found good examples specific to my job</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q11_barriers" value="no_time_learn">
+                                <span>Don't have time to learn</span>
+                            </label>
+                        </div>
+
+                        <div class="category-group">
+                            <h4 class="category-title">Tool Access</h4>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q11_barriers" value="free_version_limits">
+                                <span>Using free versions with limits (want paid access)</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q11_barriers" value="company_no_tools">
+                                <span>Company hasn't provided recommended tools</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q11_barriers" value="tool_not_approved">
+                                <span>Tool I want to use isn't approved/available</span>
+                            </label>
+                        </div>
+
+                        <div class="category-group">
+                            <h4 class="category-title">Trust/Quality</h4>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q11_barriers" value="worried_accuracy">
+                                <span>Worried about accuracy/mistakes</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q11_barriers" value="quality_not_good">
+                                <span>AI outputs aren't good enough quality for Trade's standards</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q11_barriers" value="editing_takes_long">
+                                <span>Takes too long to edit AI outputs vs. doing it myself</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q11_barriers" value="dont_trust_customer_facing">
+                                <span>Don't trust AI with customer-facing content</span>
+                            </label>
+                        </div>
+
+                        <div class="category-group">
+                            <h4 class="category-title">Privacy/Security</h4>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q11_barriers" value="concerned_trade_data">
+                                <span>Concerned about putting Trade data into AI tools</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q11_barriers" value="not_sure_safe_data">
+                                <span>Not sure what data is safe to share with AI</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q11_barriers" value="policy_unclear">
+                                <span>Company policy unclear on AI usage</span>
+                            </label>
+                        </div>
+
+                        <div class="category-group">
+                            <h4 class="category-title">Workflow</h4>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q11_barriers" value="hard_to_integrate">
+                                <span>Hard to integrate into my existing process</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q11_barriers" value="trade_specific_knowledge">
+                                <span>My work requires too much Trade-specific knowledge AI doesn't have</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q11_barriers" value="easier_do_myself">
+                                <span>Easier to just do it myself than explain it to AI</span>
+                            </label>
+                        </div>
+
+                        <div class="category-group">
+                            <h4 class="category-title">Mindset</h4>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q11_barriers" value="skeptical">
+                                <span>Skeptical that AI can actually help with my specific role</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q11_barriers" value="concerned_replace_job">
+                                <span>Concerned AI might replace my job</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q11_barriers" value="prefer_old_way">
+                                <span>Prefer doing things the way I've always done them</span>
+                            </label>
+                        </div>
+
+                        <div class="category-group">
+                            <h4 class="category-title">Other</h4>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q11_barriers" value="nothing">
+                                <span>Nothing is blocking me - I'm already using AI extensively</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="q11_barriers" value="other">
+                                <span>Other:</span>
+                                <input type="text" class="inline-text" name="q11_barriers_other" placeholder="Please specify">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <label class="question-label required">
+                        How confident are you in your ability to use AI tools effectively?
+                    </label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q12_confidence" value="very_confident" required>
+                            <span>Very confident - I'm a power user and could teach others</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q12_confidence" value="confident">
+                            <span>Confident - I can handle most tasks on my own</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q12_confidence" value="somewhat_confident">
+                            <span>Somewhat confident - I know basics but need help with advanced stuff</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q12_confidence" value="not_very_confident">
+                            <span>Not very confident - I struggle to get good results</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q12_confidence" value="not_confident">
+                            <span>Not confident at all - I need training from scratch</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q12_confidence" value="havent_tried">
+                            <span>Haven't tried yet so can't assess</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <label class="question-label required">
+                        On a scale of 1-5, how excited are you about using AI to improve your work at Trade?
+                    </label>
+                    <div class="scale-group">
+                        <label class="scale-option">
+                            <input type="radio" name="q13_excitement" value="1" required>
+                            <span class="scale-number">1</span>
+                            <span class="scale-label">Not excited</span>
+                        </label>
+                        <label class="scale-option">
+                            <input type="radio" name="q13_excitement" value="2">
+                            <span class="scale-number">2</span>
+                            <span class="scale-label">Skeptical</span>
+                        </label>
+                        <label class="scale-option">
+                            <input type="radio" name="q13_excitement" value="3">
+                            <span class="scale-number">3</span>
+                            <span class="scale-label">Neutral</span>
+                        </label>
+                        <label class="scale-option">
+                            <input type="radio" name="q13_excitement" value="4">
+                            <span class="scale-number">4</span>
+                            <span class="scale-label">Excited</span>
+                        </label>
+                        <label class="scale-option">
+                            <input type="radio" name="q13_excitement" value="5">
+                            <span class="scale-number">5</span>
+                            <span class="scale-label">Very excited</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-group conditional" id="q13b_container" style="display: none;">
+                    <label class="question-label">
+                        You selected 1 or 2 (skeptical/not excited). What would change your mind? (Optional)
+                    </label>
+                    <textarea name="q13b_change_mind" rows="3" placeholder="Help us understand your concerns"></textarea>
+                </div>
+            </div>
+
+            <!-- SECTION 5: What You Need to Succeed -->
+            <div class="form-section" data-section="5">
+                <h2 class="section-title">Section 5: What You Need to Succeed</h2>
+                
+                <div class="question-group">
+                    <label class="question-label required">
+                        If we gave you access to the best AI tools (Claude Pro, Gemini Advanced, etc.), what would you use them for FIRST?
+                    </label>
+                    <p class="helper-text">Be specific about the actual Trade task:<br>
+                    • "Writing all customer service responses"<br>
+                    • "Creating first drafts of all roaster stories"<br>
+                    • "Analyzing our subscription churn data"<br>
+                    • "Generating 50 A/B test subject line variations"</p>
+                    <textarea name="q14_use_first" rows="4" required placeholder="Your answer"></textarea>
+                </div>
+
+                <div class="question-group">
+                    <label class="question-label required">
+                        What support would help you succeed with AI? (Select your top 3)
+                    </label>
+                    <p class="helper-text">Choose the 3 most important to you</p>
+                    <div class="checkbox-group">
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q15_support" value="one_on_one">
+                            <span>1-on-1 training session tailored to my role</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q15_support" value="prompts">
+                            <span>Copy-paste prompts specific to my department</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q15_support" value="teammate_examples">
+                            <span>See real examples from teammates who are using AI successfully</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q15_support" value="office_hours">
+                            <span>Weekly "AI office hours" where I can ask questions</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q15_support" value="video_tutorials">
+                            <span>Video tutorials I can watch on my own time</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q15_support" value="written_guides">
+                            <span>Written guides and documentation</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q15_support" value="slack_channel">
+                            <span>A Slack channel for AI tips and help</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q15_support" value="paid_tools">
+                            <span>Access to paid AI tools (vs. free versions)</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q15_support" value="dedicated_time">
+                            <span>Dedicated time to experiment (not just "figure it out after hours")</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q15_support" value="clear_policy">
+                            <span>Clear company policy on what's okay to share with AI</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q15_support" value="manager_support">
+                            <span>Manager support and expectation-setting</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q15_support" value="other">
+                            <span>Other:</span>
+                            <input type="text" class="inline-text" name="q15_support_other" placeholder="Please specify">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <label class="question-label required">
+                        What's ONE specific prompt or use case you wish you had right now?
+                    </label>
+                    <p class="helper-text">Examples:<br>
+                    • "A prompt to write coffee descriptions in Trade's voice"<br>
+                    • "How to make AI search all my Gmail for customer conversation history"<br>
+                    • "A way to analyze Sheets data without writing formulas"<br>
+                    • "How to make AI write like me, not like a robot"</p>
+                    <textarea name="q16_specific_prompt" rows="3" required placeholder="Your answer"></textarea>
+                </div>
+            </div>
+
+            <!-- SECTION 6: About You -->
+            <div class="form-section" data-section="6">
+                <h2 class="section-title">Section 6: About You</h2>
+                
+                <div class="question-group">
+                    <label class="question-label required">
+                        Your Name
+                    </label>
+                    <input type="text" name="q17_name" required placeholder="First and Last Name">
+                </div>
+
+                <div class="question-group">
+                    <label class="question-label required">
+                        Department
+                    </label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q18_department" value="engineering" required>
+                            <span>Engineering</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q18_department" value="creative_design">
+                            <span>Creative & Design</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q18_department" value="marketing">
+                            <span>Marketing</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q18_department" value="merchandising">
+                            <span>Merchandising</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q18_department" value="customer_service">
+                            <span>Customer Service</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q18_department" value="finance_ops">
+                            <span>Finance & Operations</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q18_department" value="leadership">
+                            <span>Leadership</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <label class="question-label required">
+                        How long have you been at Trade?
+                    </label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q19_tenure" value="less_6mo" required>
+                            <span>Less than 6 months</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q19_tenure" value="6mo_1yr">
+                            <span>6 months - 1 year</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q19_tenure" value="1_2yrs">
+                            <span>1-2 years</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q19_tenure" value="2plus">
+                            <span>2+ years</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 7: Share Your Wins -->
+            <div class="form-section" data-section="7">
+                <h2 class="section-title">Section 7: Share Your Wins (Optional)</h2>
+                <p class="section-description">We want to celebrate wins and learn from each other. If you've figured something out that works, share it here! We might feature it in our launch.</p>
+                
+                <div class="question-group">
+                    <label class="question-label">
+                        Do you have an AI success story or specific tip you'd be willing to share with the team?
+                    </label>
+                    <p class="helper-text">Examples:<br>
+                    • "I use Claude to write first drafts of roaster stories, then I add personality. Cut my time from 3 hours to 45 minutes per story."<br>
+                    • "I ask Gemini 'summarize the last 10 emails with this customer' before responding. Saves me 10 minutes per ticket."<br>
+                    • "I paste error messages into ChatGPT and it explains them in plain English. Debugging is 2x faster."</p>
+                    <textarea name="q20_success_story" rows="4" placeholder="Your story (optional)"></textarea>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="form-navigation">
+                <button type="button" class="btn btn-secondary" id="prevBtn" style="display: none;">← Previous</button>
+                <button type="button" class="btn btn-primary" id="nextBtn">Next →</button>
+                <button type="submit" class="btn btn-primary" id="submitBtn" style="display: none;">Submit Survey</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-icon">✓</div>
+            <h2>Thank You!</h2>
+            <p>Your responses have been submitted successfully.</p>
+            <p class="modal-subtext">This survey helps us understand where everyone is so we can build the right training, tools, and support for Week 1.</p>
+            <p class="modal-subtext"><strong>Expect results and next steps by Friday. Launch is Monday.</strong></p>
+            <p class="modal-subtext">Questions? Reply to the launch email or DM in Slack.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
