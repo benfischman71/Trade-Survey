@@ -7,7 +7,7 @@ const CONFIG = {
     
     // Google Sheets Web App URL (you'll get this after deploying the Google Apps Script)
     // Replace with your actual URL after setup
-    googleSheetsURL: 'https://script.google.com/macros/s/AKfycbwGbJ0mthtzpQBraDcvuUPcUrjsY8ycBDf-K5GOhwQJHL0LepHJ3Amq3UVR9goAtLLh9w/exec',
+    googleSheetsURL: 'https://script.google.com/macros/s/AKfycbx7whcuzvXUmp-ps6RTPqlmnEZZ4XASfbq31Jy95UAKinq_VNdGVZ_vznJA6PAxJyjnNA/exec',
     
     // Total number of sections
     totalSections: 7
