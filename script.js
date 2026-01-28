@@ -3,7 +3,7 @@
 // Configuration
 const CONFIG = {
     // Set your deadline here (format: 'YYYY-MM-DD HH:MM:SS')
-    deadline: '2026-01-29 17:00:00', // Wednesday at 5pm
+    deadline: '2026-01-30 17:00:00', // Wednesday at 5pm
     
     // Google Sheets Web App URL (you'll get this after deploying the Google Apps Script)
     // Replace with your actual URL after setup
